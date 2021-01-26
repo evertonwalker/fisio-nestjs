@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 
 @Injectable()
 export class PatientService {
@@ -7,8 +7,15 @@ export class PatientService {
         throw new Error();
     }
 
-    async getPatientById(id: number): Promise<void> {
-        throw new Error();
+    async getPatientById(id): Promise<void> {
+
+
+        if (isNaN(+id)) {
+            throw new BadRequestException();
+        } else {
+
+        }
+
     }
 
 }
