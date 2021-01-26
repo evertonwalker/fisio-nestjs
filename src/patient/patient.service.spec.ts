@@ -22,8 +22,14 @@ describe('PatientService', () => {
      await expect(service.createPatient({})).rejects.toThrow();
     });
   
+    it('should be throw if called with invalid id ', async () => {
+     await expect(service.getPatientById(1)).rejects.toThrow();
+    });
+  
   
   });
+
+  
 
 });
 
